@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Map, Marker, InfoWindow, GoogleApiWrapper } from 'google-maps-react';
+import React, { useEffect } from 'react';
+import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
 
 const mapStyles = {
   position: 'relative',
@@ -7,12 +7,11 @@ const mapStyles = {
   height: '75%',
 };
 
-const MapContainer = (props) => {
-  const [location, setLocation] = useState({ lat: -33.0, lng: -56.0 });
-
+const MapContainer = ({ getWeather, setLocation, location, google }) => {
   const getPosition = ({ coords }) => {
     const { latitude, longitude } = coords;
     setLocation({ lat: latitude, lng: longitude });
+    getWeather(latitude, longitude);
   };
 
   useEffect(() => {
@@ -26,13 +25,14 @@ const MapContainer = (props) => {
     const lat = latLng.lat();
     const lng = latLng.lng();
     setLocation({ lat, lng });
+    getWeather(lat, lng);
   };
 
   return (
     <Map
       style={mapStyles}
-      google={props.google}
-      zoom={14}
+      google={google}
+      zoom={12}
       onClick={onClickMap}
       center={location}
     >
