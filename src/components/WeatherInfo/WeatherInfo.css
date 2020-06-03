@@ -4,23 +4,29 @@
   bottom: 0;
   height: 25%;
   width: 100%;
-  background-color: lightblue;
+}
+
+.locationInfo {
+  font-weight: bold;
+  font-size: 40px;
+  padding-top: 20px;
 }
 
 .weatherStyle {
   background-color: #f5f5f5;
   display: flex;
-  justify-content: center;
-  width: 40%;
-  margin: 30px auto;
-  padding: 10px;
-  border-radius: 20px;
+  width: 50%;
+  margin: 20px auto;
+  padding: 10px 0 10px 0;
 }
 
 span {
   margin: auto;
   padding: 0 30px 0 30px;
-  font-size: 50px;
+  font-size: 35px;
+  border-left-style: solid;
+  border-width: 3px;
+  border-color: #51b8d8;
 }
 
 @media only screen and (max-width: 1440px) {
@@ -35,7 +41,13 @@ span {
 
 @media only screen and (max-width: 1024px) {
   span {
-    font-size: 40px;
+    font-size: 35px;
+    border-left-style: none;
+  }
+
+  .locationInfo {
+    font-size: 35px;
+    padding-top: 10px;
   }
 
   .weatherStyle {
@@ -46,7 +58,7 @@ span {
 
 @media only screen and (max-width: 425px) {
   span {
-    font-size: 40px;
+    font-size: 30px;
   }
 
   .weatherStyle {
