@@ -1,0 +1,10 @@
+:root {
+  --color-white: #ffffff;
+  --color-ligthGray: #e4e4e4;
+  --color-transparentBlack: rgba(0, 0, 0, 0.5);
+  --color-black: #0c0c0c;
+  --color-body: #202020;
+  --color-sideDrawer: #3b3b3b;
+  --color-orange: #ee913a;
+  --color-darkOrange: #dd7411;
+}

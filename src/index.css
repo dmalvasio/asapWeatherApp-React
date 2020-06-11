@@ -1,3 +1,5 @@
+@import './constants/colors.css';
+
 html {
   height: 100%;
 }
@@ -6,7 +8,7 @@ body {
   margin: 0;
   font-family: 'Rubik', sans-serif;
   height: 100%;
-  background-color: #add8e6;
+  background-color: var(--color-body);
 }
 
 code {

@@ -1,10 +1,13 @@
 import React, { useEffect } from 'react';
 import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
+import { func, object } from 'prop-types';
+import { GOOGLE_API_KEY } from '../../constants';
 
 const mapStyles = {
   position: 'relative',
   width: '100%',
-  height: '75%',
+  height: 'calc(70% - 55px)',
+  marginTop: '55px',
 };
 
 const MapContainer = ({ getWeather, setLocation, location, google }) => {
@@ -32,15 +35,23 @@ const MapContainer = ({ getWeather, setLocation, location, google }) => {
     <Map
       style={mapStyles}
       google={google}
-      zoom={12}
+      zoom={13}
       onClick={onClickMap}
       center={location}
+      initialCenter={location}
     >
       <Marker position={location} />
     </Map>
   );
 };
 
+MapContainer.propTypes = {
+  getWeather: func.isRequired,
+  setLocation: func.isRequired,
+  location: object.isRequired,
+  google: object.isRequired,
+};
+
 export default GoogleApiWrapper({
-  apiKey: process.env.GOOGLE_API_KEY,
+  apiKey: GOOGLE_API_KEY,
 })(MapContainer);
