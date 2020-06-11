@@ -1,0 +1,27 @@
+@import '../../../constants/colors.css';
+
+.SideDrawer {
+  position: fixed;
+  width: 300px;
+  max-width: 70%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 200;
+  background-color: var(--color-sideDrawer);
+  padding: 32px 16px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease-out;
+}
+
+.FavToolbar {
+  color: var(--color-orange);
+}
+
+.Open {
+  transform: translateX(0);
+}
+
+.OnClosed {
+  transform: translateX(-100%);
+}

@@ -1,8 +1,9 @@
 import React from 'react';
 import { string } from 'prop-types';
-import './WeatherInfo.css';
+import './weatherInfo.css';
 
 const WeatherInfo = ({
+  addFav,
   city,
   country,
   weatherStatus,
@@ -11,15 +12,20 @@ const WeatherInfo = ({
   maxTemp,
 }) => {
   return (
-    <div className="weatherInfo">
-      <div className="locationInfo">
+    <div className="WeatherStyle">
+      <div className="LocationInfo">
         {city}, {country}
       </div>
-      <div className="weatherStyle">
-        <span>{weatherStatus}</span>
-        <span>{temp}°C</span>
-        <span>Max: {maxTemp}°C</span>
-        <span>Min: {minTemp}°C</span>
+      <div className="WeatherInfoFlex">
+        <div className="WeatherInfo">
+          <span>{weatherStatus}</span>
+          <span>{temp}°C</span>
+          <span>Max: {maxTemp}°C</span>
+          <span>Min: {minTemp}°C</span>
+        </div>
+        <div className="FavouriteBtn" onClick={addFav}>
+          Add to favorites
+        </div>
       </div>
     </div>
   );
