@@ -1,6 +1,6 @@
 import React from 'react';
 import { string } from 'prop-types';
-import './weatherInfo.css';
+import './WeatherInfo.css';
 
 const WeatherInfo = ({
   addFav,
